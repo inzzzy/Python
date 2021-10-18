@@ -4,6 +4,14 @@ import string
 from sys import exit
 from sys import argv
 
+"""
+Simple Secure Password generator made in Python.
+Pretty straight-forward, only detail is
+the secrets module was used instead of random since
+secrets was designed for cryptographic usage
+whereas the random module was not.
+"""
+
 if len(argv) > 2:
 	print("Usage: python3 pass-gen <length> (default 30, max 500)")
 	exit(1)
@@ -27,3 +35,5 @@ if len(argv) == 2:
  
 print(generate())
 exit(0)
+
+
