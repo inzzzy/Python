@@ -18,7 +18,7 @@ if len(argv) > 2:
 
 if len(argv) == 2:
 	if not argv[1].isdigit():
-		print("Invalid argument")
+		print("Invalid length")
 		exit(1)
 	if int(argv[1]) > 500:
 		print("Password too large")
@@ -29,11 +29,14 @@ charset = string.ascii_letters + string.digits + string.punctuation + '         
 def generate(length=30):
 	return ''.join(secrets.choice(charset) for i in range(length))
 
-if len(argv) == 2:
-	print(generate(int(argv[1])))
+def main():
+	if len(argv) == 2:
+		print(generate(int(argv[1])))
+	else:
+		print(generate())
+	
+if __name__ == "__main__":
+	main()
 	exit(0)
- 
-print(generate())
-exit(0)
 
 
